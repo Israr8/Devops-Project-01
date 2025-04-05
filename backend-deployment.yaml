@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: backend
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: backend
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yml
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/app-network: "true"
+        io.kompose.service: backend
+    spec:
+      containers:
+        - env:
+            - name: DB_HOST
+              value: mysql
+            - name: DB_NAME
+              value: tasksdb
+            - name: DB_PASSWORD
+              value: password
+            - name: DB_USER
+              value: root
+            - name: PORT
+              value: "5000"
+          image: 2022bcd0026-bhanu-reddy:latest
+          name: backend-2022bcd0026
+          ports:
+            - containerPort: 5000
+          resources: {}
+      restartPolicy: Always
+status: {}

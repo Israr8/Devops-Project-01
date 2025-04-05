@@ -1,0 +1,8 @@
+# /home/bhanureddy/Desktop/files/devops/assignment3/kubernetes-fullstack-app/k8s/frontend/frontend-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+data:
+  REACT_APP_API_URL: "http://$(minikube ip):30001/api"
+  APP_ENV: "production"

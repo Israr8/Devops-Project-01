@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deploy-2022bcd0026
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+      owner: 2022bcd0026
+  template:
+    metadata:
+      labels:
+        app: frontend
+        owner: 2022bcd0026
+    spec:
+      containers:
+      - name: frontend
+        image: bhanureddy1973/frontend-2022bcd0026-bhanu-reddy:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        env:
+        - name: REACT_APP_API_URL
+          valueFrom:
+            configMapKeyRef:
+              name: frontend-config
+              key: REACT_APP_API_URL
