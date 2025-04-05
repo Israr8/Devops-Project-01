@@ -4,6 +4,26 @@
 **Roll No:** 2022bcd0026
 
 This repository contains all the necessary files to containerize and deploy a full-stack web application (React frontend, Node.js backend, MySQL database) using Minikube.
+## Key Features
+-Frontend: A React-based user interface for managing tasks (CRUD operations).
+- Backend: A Node.js Express API that connects to the MySQL database and handles business logic.
+- Database: MySQL database for storing tasks with persistent storage.
+- Containerization: Dockerized services for consistent deployment.
+- Orchestration: Kubernetes manifests for deploying and managing the application components.
+
+## Technologies Used
+- Frontend: React, Axios, Nginx
+- Backend: Node.js, Express
+- Database: MySQL
+- Containerization: Docker
+- Orchestration: Kubernetes (Minikube)
+
+## Deployment
+The application is deployed on Kubernetes with the following components:
+
+- MySQL: Configured with PersistentVolume and initialized with a script.
+- Backend: Exposed as a ClusterIP service.
+- Frontend: Exposed as a NodePort service for external access
 
 ## Table of Contents
 - [Project Overview](#project-overview)
