@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service-byisrar
+  labels:
+    tag: frontend
+spec:
+  selector:
+    tag: frontend
+  ports:
+   - protocol: TCP
+     port: 80
+     targetPort: 80
+     nodePort: 30000
+  type: NodePort

@@ -104,7 +104,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Task Manager</h1>
-        <h2>by Bhanu Reddy (2022bcd0026)</h2>
+        <h2>by Israr Ahmad (03176402700)</h2>
       </header>
 
       <div className="container">

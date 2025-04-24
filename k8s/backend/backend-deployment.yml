@@ -1,24 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-deploy-2022bcd0026
+  name: backend-deployment-byisrar
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      app: backend
-      owner: 2022bcd0026
+      tag: backend
   template:
     metadata:
       labels:
-        app: backend
-        owner: 2022bcd0026
+        tag: backend
     spec:
       containers:
       - name: backend
-        image: bhanureddy1973/2022bcd0026-bhanu-reddy:latest
-        imagePullPolicy: Always
-        ports:
+        image: byisrar/mybackend:byisrar
+        imagePullPolicy: IfNotPresent
+        ports :
         - containerPort: 5000
         env:
         - name: PORT

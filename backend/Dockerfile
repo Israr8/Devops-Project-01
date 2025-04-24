@@ -1,13 +1,19 @@
 FROM node:18-alpine
 
+
+
 WORKDIR /app
 
-COPY package*.json ./
+COPY ./package*.json ./
 
 RUN npm install --production
 
+
 COPY . .
 
-EXPOSE 5000
+
+
+EXPOSE 5050
+
 
 CMD ["node", "src/app.js"]
